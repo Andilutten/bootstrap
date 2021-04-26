@@ -9,7 +9,13 @@ installPackages() {
 		docker.io
 		golang
 	)
+	SNAP_PACKAGES_CLASSIC=(
+		slack
+	)
 	sudo apt install -y ${PACKAGES[@]}
+	for PACKAGE in ${SNAP_PACKAGES_CLASSIC[@]}; do
+		yes | sudo snap install $PACKAGE --classic
+	done
 }
 
 setupGnomeTerminal() {

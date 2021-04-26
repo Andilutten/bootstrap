@@ -72,14 +72,17 @@ EOF
 setupBash() {
 cat << EOF >> $HOME/.profile
 # Set up pathing for golang
-export GOPATH="$HOME/.local/go"
-export GOBIN="$GOPATH/bin"
-export PATH="$GOBIN:$PATH"
+export GOPATH="\$HOME/.local/go"
+export GOBIN="\$GOPATH/bin"
+export PATH="\$GOBIN:\$PATH"
 
 # Set up pathing for npm
-export NPMPATH="$HOME/.local/npm"
-export NPMBIN="$HOME/.local/npm/bin"
-export PATH="$NPMBIN:$PATH"
+export NPMPATH="\$HOME/.local/npm"
+export NPMBIN="\$HOME/.local/npm/bin"
+export PATH="\$NPMBIN:\$PATH"
+EOF
+cat << EOF >> $HOME/.bashrc
+export EDITOR=\${EDITOR:-vim}
 EOF
 }
 

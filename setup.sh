@@ -38,7 +38,7 @@ installFonts() {
 
 	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip
 	mkdir -p $FONTS_DIR
-	unzip Fonts/CascadiaCode.zip -d $FONTS_DIR
+	unzip CascadiaCode.zip -d $FONTS_DIR
 	rm CascadiaCode.zip
 	fc-cache
 
@@ -63,7 +63,7 @@ EOF
 }
 
 setupBash() {
-cat << EOF > $HOME/.profile
+cat << EOF >> $HOME/.profile
 # Set up pathing for golang
 export GOPATH="$HOME/.local/go"
 export GOBIN="$GOPATH/bin"

@@ -5,6 +5,7 @@ installPackages() {
 		build-essential
 		dconf-cli
 		vim
+		git
 		docker.io
 		golang
 	)

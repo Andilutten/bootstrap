@@ -58,9 +58,36 @@ export EDITOR=\${EDITOR:-vim}
 EOF
 }
 
+setupVim() {
+cat << EOF >> $HOME/.vimrc
+filetype plugin on
+syntax on
+
+set number
+set hidden
+set magic
+set relativenumber
+set hidden
+set nowrap
+set modeline
+set noexpandtab
+
+function s:default_colorscheme_overrides()
+	highlight EndOfBuffer ctermfg=0
+	highlight Comment ctermfg=2
+	highlight Normal ctermbg=none
+endfunction
+
+autocmd ColorScheme evening call <SID>default_colorscheme_overrides()
+
+colorscheme evening
+EOF
+}
+
 installPackages
 installFonts
 setupInputSources
 setupGnomeTerminal
 setupWindowManagement
 setupBash
+setupVim

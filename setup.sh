@@ -12,6 +12,7 @@ installPackages() {
 		git
 		docker.io
 		golang
+		ripgrep
 	)
 	sudo apt update
 	sudo apt install -y ${PACKAGES[@]}
